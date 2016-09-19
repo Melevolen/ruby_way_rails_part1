@@ -1,6 +1,11 @@
 Rails.application.routes.draw do
+
+	# указанным здесь ресурсам будут созданы Actions в контроллере 
+
   resources :trains
   resources :railway_stations
+  resources :routes
+  get 'routes/index'
   get 'first_cntr/index'
 
   root 'first_cntr#index'

@@ -1,6 +1,6 @@
 class RoutesController < ApplicationController
   before_action :set_route, only:[:show, :edit, :update, :destroy]
-  
+
   def index
     @routes = Route.all
   end
@@ -16,8 +16,11 @@ class RoutesController < ApplicationController
   def create
     @route = Route.new(route_params)
 
-    @route.save
-    redirect_to @route
+    if @route.save
+      redirect_to @route
+    else
+      render :new
+    end
   end
 
   def edit

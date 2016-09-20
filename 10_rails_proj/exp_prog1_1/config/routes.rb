@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  get 'routes/index'
   get 'welcome/index'
 
   resources :trains

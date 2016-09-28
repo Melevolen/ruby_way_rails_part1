@@ -17,7 +17,7 @@ class RoutesController < ApplicationController
     @route = Route.new(route_params)
 
     if @route.save
-      redirect_to @route
+      redirect_to @route # redirect if no errors
     else
       render :new
     end

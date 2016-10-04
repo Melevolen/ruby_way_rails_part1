@@ -3,5 +3,5 @@ class Train < ApplicationRecord
   belongs_to :current_station, class_name: 'RailwayStation', foreign_key: :current_station_id, inverse_of: :trains, optional: true
 
   has_many :tickets, inverse_of: :train
-  has_many :users
+  has_many :users, through: :tickets
 end

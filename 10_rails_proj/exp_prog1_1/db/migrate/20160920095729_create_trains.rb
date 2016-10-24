@@ -4,6 +4,7 @@ class CreateTrains < ActiveRecord::Migration[5.0]
       t.string :number
       t.integer :route_id
       t.integer :current_station_id
+      # t.integer :train_id
       t.timestamps
     end
   end

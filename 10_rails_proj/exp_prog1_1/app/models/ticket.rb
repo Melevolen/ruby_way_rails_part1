@@ -1,10 +1,11 @@
 class Ticket < ApplicationRecord
-  # belong_to :user
-  has_one :user, inverse_of: :tickets
-  has_one :train, inverse_of: :tickets
-
-  # @route = Route.find("#{@train.route_id}")
-  # has_one @route.railway_stations.first
-  # has_one @route.railway_stations.last
+  # belongs_to :user
+  belongs_to :user, inverse_of: :tickets
+  belongs_to :train, inverse_of: :tickets
+  
+  belongs_to :first_railway_station_id, class_name: 'RailwayStation', foreign_key: :first_railway_station_id, inverse_of: :trains, optional: true
+  belongs_to :last_railway_station_id, class_name: 'RailwayStation', foreign_key: :first_railway_station_id, inverse_of: :trains, optional: true
 
 end
+
+# Ticket - Train - Route - Stations

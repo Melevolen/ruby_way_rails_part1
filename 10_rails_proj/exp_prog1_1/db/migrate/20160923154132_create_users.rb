@@ -3,6 +3,7 @@ class CreateUsers < ActiveRecord::Migration[5.0]
     create_table :users do |t|
       t.string :name
       t.integer :train_id
+      t.integer :ticket_id
       t.timestamps
     end
   end
